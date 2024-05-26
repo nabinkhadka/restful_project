@@ -10,6 +10,18 @@ def get_task():
 @app.route("/test", methods = ["GET"])
 def test_Function():
   return "Test runs successful"
+app.run(debug=True)
+
+@app.route('/books', methods=['GET'])
+def get_books():
+    books = [
+        {'title': 'Harry Potter', 'volume': "The Philosopher's Stone"},
+        {'title': 'Harry Potter', 'volume': "Chamber of Secrets"},
+        {'title': 'Harry Potter', 'volume': "Prisoner of Azkaban"},
+    ]
+    return {'books': books}, 200
+
+app.run(debug=True, port=5000)
 
 @app.route("/books", methods = ["GET"])
 def get_book():
