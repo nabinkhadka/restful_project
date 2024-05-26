@@ -7,5 +7,7 @@ def get_task():
   records = {"record1":"record 1 data", "record2":"record 2 data", "record2":"record 3 data"}
   return {"records": records}, 200
 
-
+@app.route("/test", methods = ["GET"])
+def test_Function():
+  return "Test runs successful"
 app.run(debug=True)
