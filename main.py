@@ -11,3 +11,8 @@ def get_task():
 def test_Function():
   return "Test runs successful"
 app.run(debug=True)
+
+@app.route("/", methods = ["GET"])
+def get_book():
+  books = {"book1":"book1 data", "book2":"book2 data", "book3":"book3 data"}
+  return {"books": books}, 200
